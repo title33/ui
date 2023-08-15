@@ -1,30 +1,29 @@
+local Delay2 = false
+local leftFrame = game:GetService("CoreGui").TopBarApp.TopBarFrame.LeftFrame
 
+local chatIconSize = leftFrame.ChatIcon.Size
 
+local imageButton = Instance.new("ImageButton")
+imageButton.Size = chatIconSize
+imageButton.Position = UDim2.new(0, chatIconSize.X.Offset + 100, 0.5, 0)
+imageButton.AnchorPoint = Vector2.new(0, 0.5)
+imageButton.Image = "rbxassetid://14420244942"
+imageButton.BackgroundTransparency = 1
+imageButton.ZIndex = 2
+imageButton.Parent = leftFrame.Parent
 
-local ScreenGui = Instance.new("ScreenGui")
-local ui = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0, 15)
+uiCorner.Parent = imageButton
 
---Properties:
-
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ui.Name = "ui"
-ui.Parent = ScreenGui
-ui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ui.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ui.BorderSizePixel = 0
-ui.Position = UDim2.new(0.832802534, 0, 0.122650295, 0)
-ui.Size = UDim2.new(0, 68, 0, 67)
-ui.Image = "http://www.roblox.com/asset/?id=14420244942"
-ui.MouseButton1Click:Connect(function()
-	game.CoreGui:FindFirstChild("Discord").Enabled = not game.CoreGui:FindFirstChild("Discord").Enabled
+imageButton.Activated:Connect(function()
+if Delay2 == false then
+    Delay2 = true
+    game.CoreGui:FindFirstChild("Discord").Enabled = not game.CoreGui:FindFirstChild("Discord").Enabled
+    wait(1)
+    Delay2 = false
+end
 end)
-
-
-UICorner.CornerRadius = UDim.new(0.300000012, 0)
-UICorner.Parent = ui
 
 
 
