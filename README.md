@@ -1,4 +1,6 @@
 
+
+
 local ScreenGui = Instance.new("ScreenGui")
 local ui = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -13,7 +15,7 @@ ui.Parent = ScreenGui
 ui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ui.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ui.BorderSizePixel = 0
-ui.Position = UDim2.new(0.0907643363, 0, 0.138146177, 0)
+ui.Position = UDim2.new(0.832802534, 0, 0.122650295, 0)
 ui.Size = UDim2.new(0, 68, 0, 67)
 ui.Image = "http://www.roblox.com/asset/?id=14420244942"
 ui.MouseButton1Click:Connect(function()
@@ -23,10 +25,6 @@ end)
 
 UICorner.CornerRadius = UDim.new(0.300000012, 0)
 UICorner.Parent = ui
-
-
-
-
 
 
 
