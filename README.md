@@ -1,10 +1,29 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GodYT88/SunX/main/NOTHING.lua%22))()
+local Delay2 = false
+local leftFrame = game:GetService("CoreGui").TopBarApp.TopBarFrame.LeftFrame
 
-repeat wait() until game:IsLoaded()
-game:GetService("Players").LocalPlayer.Idled:connect(function() 
-game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+local chatIconSize = leftFrame.ChatIcon.Size
+
+local imageButton = Instance.new("ImageButton")
+imageButton.Size = chatIconSize
+imageButton.Position = UDim2.new(0, chatIconSize.X.Offset + 100, 0.5, 0)
+imageButton.AnchorPoint = Vector2.new(0, 0.5)
+imageButton.Image = "rbxassetid://14420244942"
+imageButton.BackgroundTransparency = 1
+imageButton.ZIndex = 2
+imageButton.Parent = leftFrame.Parent
+
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0, 15)
+uiCorner.Parent = imageButton
+
+imageButton.Activated:Connect(function()
+if Delay2 == false then
+    Delay2 = true
+    game.CoreGui:FindFirstChild("Discord").Enabled = not game.CoreGui:FindFirstChild("Discord").Enabled
+    wait(1)
+    Delay2 = false
+end
 end)
-
 
 
 
