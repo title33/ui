@@ -3,9 +3,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GodYT88/SunX/main/NOT
 repeat wait() until game:IsLoaded()
 game:GetService("Players").LocalPlayer.Idled:connect(function() 
 game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-end)![image](https://github.com/title33/ui/assets/126984696/d4b4a4ea-39f9-4c30-afcb-14878ce844ea)
-
-
+end)
 
 
 
