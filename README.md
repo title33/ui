@@ -1,5 +1,29 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GodYT88/SunX/main/NOTHING.lua"))()
+local Delay2 = false
+local leftFrame = game:GetService("CoreGui").TopBarApp.TopBarFrame.LeftFrame
 
+local chatIconSize = leftFrame.ChatIcon.Size
+
+local imageButton = Instance.new("ImageButton")
+imageButton.Size = chatIconSize
+imageButton.Position = UDim2.new(0, chatIconSize.X.Offset + 100, 0.5, 0)
+imageButton.AnchorPoint = Vector2.new(0, 0.5)
+imageButton.Image = "http://www.roblox.com/asset/?id=14491200389"
+imageButton.BackgroundTransparency = 1
+imageButton.ZIndex = 2
+imageButton.Parent = leftFrame.Parent
+
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(0, 15)
+uiCorner.Parent = imageButton
+
+imageButton.Activated:Connect(function()
+if Delay2 == false then
+    Delay2 = true
+    game.CoreGui:FindFirstChild("Discord").Enabled = not game.CoreGui:FindFirstChild("Discord").Enabled
+    wait(1)
+    Delay2 = false
+end
+end)
 
 
 
